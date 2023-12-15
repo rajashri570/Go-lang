@@ -1,5 +1,6 @@
 //write a progra to create a  Employee structure and print data of rmployee.
 //try auto incremented id
+
 package main
 
 import (
