@@ -1,0 +1,3 @@
+I am rajashri
+I hav written code to understand the read and write opearation to the file.
+File IO is important topic in any Programming languages.

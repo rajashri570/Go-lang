@@ -1,12 +1,13 @@
 package main
 
 import (
+	"MyProject/task"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
 )
-s
+
 func initializeRouter() {
 	r := mux.NewRouter()
 	r.HandleFunc("/tasks", task.View_tasks).Methods("GET")

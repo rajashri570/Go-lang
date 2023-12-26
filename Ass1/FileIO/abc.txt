@@ -1,0 +1,6 @@
+Hello welcome to go programming.go is very simple and readable programming language and syntax in go go language are easy
+to understand and use. Its Procedural programming language.
+This is the statically types langugage.
+It supports all kinds of libraries like lebraries for networking.
+It is used different applications like Docker .NetFlix and even Go language written in go itself
+I provides concurrency.
