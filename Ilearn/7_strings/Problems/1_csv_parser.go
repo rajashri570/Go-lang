@@ -40,6 +40,7 @@ func main() {
 	input_str, err := reader.ReadString('\n')
 	if err != nil {
 		fmt.Println("Error occured!")
+		return
 	}
 	//parse csv
 	CSV_Parser, err := getCSV(input_str)
