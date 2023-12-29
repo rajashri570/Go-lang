@@ -13,7 +13,6 @@ import (
 
 func main() {
 
-	//file, err := os.Open("file2.txt")
 	file, err := os.OpenFile("file2.txt", os.O_RDWR, 0644)
 	if err != nil {
 		fmt.Println("Errror in opening file")
