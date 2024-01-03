@@ -13,38 +13,57 @@ import (
 
 func main() {
 
-	file, err := os.OpenFile("file2.txt", os.O_RDWR, 0644)
+	file, err := os.Open("file2.txt")
 	if err != nil {
 		fmt.Println("Errror in opening file")
 		return
 	}
 	defer file.Close()
 
+	scanner := bufio.NewScanner(os.Stdin)
+
 	var updated_data string
 
-	scanner := bufio.NewScanner(file)
-
 	for scanner.Scan() {
-
+		
 		line := scanner.Text()
-		// fmt.Println(line)
-		updated_data = updated_data + strings.Replace(line, "golang", "python", -1) + "\n"
-		//updated_data = append(updated_data, strings.Replace(line, "rajashri", "girl", -1))
+
+		updated_data = updated_data + strings.Replace(line, "golang", "python",-1)+"\n"
 	}
-
+	file.Seek(0,0)
 	writer := bufio.NewWriter(file)
-	_, err = writer.WriteString(updated_data)
+	_,err = writer.WriteString(updated_data)
 
-	if err != nil {
-		fmt.Println("Error while writing..", err)
+	if err != nil{
+		fmt.Println("Error while writing..",err)
+		return
+	} else{
+		fmt.Println("data replaced successfully")
+	}
+	err = writer.Flush()
+	if err != nil{
+		fmt.Println("error in flush")
 		return
 	}
 
-	//file.Seek(0, 0)
-	err = writer.Flush()
-	if err != nil {
-		fmt.Println("ERROR OCUURED :", err)
-	} else {
-		fmt.Println("successfully replaced!")
-	}
 }
+
+
+		
+		/*line = strings.TrimRight(line, "\n")
+		wordList := strings.Fields(line)
+
+		for i, word := range wordList {
+
+			if word == "rajashri" {
+				fmt.Println("index:", i)
+			}
+		}
+
+		if err := scanner.Err(); err != nil {
+			fmt.Println("ERROR READING words:", err)
+			return
+		}*/
+
+
+
