@@ -45,14 +45,16 @@ func (Q *Queue) PrintQueue() {
 }
 
 func (Q *Queue) DeQueue() {
-
+	data := 0
 	if Q.size == 0 {
 		fmt.Println("Queue is empty")
 		return
 	} else {
-		data := Q.end.data
-		q.end.next = q.end - 1
+		data = Q.start.data
+		Q.start = Q.start.next
+		Q.size--
 	}
+	fmt.Print("deleted item :", data)
 }
 
 func main() {
@@ -63,4 +65,7 @@ func main() {
 	que.Enqueue(10)
 	que.PrintQueue()
 	// fmt.Println(que)
+
+	que.DeQueue()
+	que.PrintQueue()
 }
